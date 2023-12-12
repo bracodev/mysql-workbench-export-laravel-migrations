@@ -149,7 +149,7 @@ indexKeyTemplate = '''
 
 migrationEndingTemplate = '''        Schema::dropIfExists($this->tableName);
     }}
-}}
+}};
 '''
 
 ModuleInfo = DefineModule(
@@ -506,6 +506,7 @@ def generate_laravel_migration(catalog):
                     migrations[ti].append(migrationDownTemplate)
                     migrations[ti].append(migrationEndingTemplate.format(tableName=table_name))
                     ti += 1
+
 
         return migrations
 
